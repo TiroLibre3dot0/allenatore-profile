@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Migliora la fluidità generale */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Imposta effetti più fluidi sui quadranti */
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}

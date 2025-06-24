@@ -79,9 +79,9 @@ function App() {
 
   return (
     <div
-      className="h-screen w-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-8 sm:grid-rows-4 lg:grid-rows-2 relative overflow-hidden transition-all duration-200 ease-out"
+      className="min-h-screen w-full grid grid-cols-4 grid-rows-2 sm:grid-cols-2 sm:grid-rows-4 gap-2 transition-all duration-500 ease-in-out p-2"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${hoveredQuadrant.image})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${hoveredQuadrant.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -90,20 +90,21 @@ function App() {
         <section
           key={q.id}
           onMouseEnter={() => setHoveredId(q.id)}
-          className={`border border-white/30 p-3 relative text-white z-10 transition-all duration-200 overflow-hidden
+          className={`relative p-3 rounded-xl overflow-hidden text-white border border-white/20 backdrop-blur-md
+            transition-all duration-300 ease-in-out cursor-pointer
             ${q.fixed ? '' : hoveredId === q.id ? q.color : 'bg-transparent'}`}
         >
           {q.fixed ? (
-            <div className="flex flex-col h-full justify-between p-2 sm:p-4 lg:p-6">
+            <div className="flex flex-col h-full justify-between">
               <div>
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">{q.title}</h1>
-                <h2 className="text-sm sm:text-lg font-medium mt-1">{q.subtitle}</h2>
+                <h1 className="text-lg sm:text-xl font-extrabold leading-tight">{q.title}</h1>
+                <h2 className="text-sm sm:text-base font-medium mt-1">{q.subtitle}</h2>
               </div>
               <div className="mt-3">
                 <p className="text-sm italic text-white/90">«{q.description}»</p>
                 <a
                   href="#contatti"
-                  className="inline-block mt-4 px-4 py-2 rounded-md bg-violet-600 hover:bg-violet-700 text-xs sm:text-sm font-semibold text-white shadow"
+                  className="inline-block mt-4 px-3 py-1.5 rounded bg-violet-600 hover:bg-violet-700 text-xs sm:text-sm font-semibold text-white shadow"
                 >
                   Contattami
                 </a>
@@ -121,18 +122,18 @@ function App() {
               </div>
             </div>
           ) : hoveredId === q.id ? (
-            <div className="absolute inset-0 flex flex-col justify-center p-4 sm:p-6 text-left text-white/90 animate-fadeIn">
-              <h2 className="font-serif text-2xl sm:text-3xl font-extrabold drop-shadow">{q.title}</h2>
-              <p className="mt-4 max-w-md text-sm sm:text-base leading-relaxed">{q.description}</p>
+            <div className="absolute inset-0 flex flex-col justify-center p-4 text-left animate-fadeIn">
+              <h2 className="text-xl sm:text-2xl font-extrabold drop-shadow">{q.title}</h2>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-md">{q.description}</p>
               <a
                 href="#"
-                className="mt-5 text-sm underline underline-offset-4 decoration-white hover:decoration-2 transition-all"
+                className="mt-4 text-xs sm:text-sm underline underline-offset-4 decoration-white hover:decoration-2 transition-all"
               >
                 Scopri la sezione
               </a>
             </div>
           ) : (
-            <div className="absolute bottom-2 right-3 text-sm sm:text-base font-normal opacity-70 drop-shadow-sm">
+            <div className="absolute bottom-2 right-3 text-sm font-normal opacity-70 drop-shadow-sm">
               {q.title}
             </div>
           )}
