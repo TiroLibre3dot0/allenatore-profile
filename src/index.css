@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- index.css ---------- */
+
+/* lo sfondo di default è sempre visibile … */
+body{
+  @apply bg-neutral-900 overflow-hidden;   /* fallback */
+}
+
+/* … ma velato da un overlay scuro leggero  */
+.bg-glass{
+  @apply after:absolute after:inset-0 after:bg-black/40 after:pointer-events-none;
+}
