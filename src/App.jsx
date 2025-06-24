@@ -28,7 +28,7 @@ const QUADRANTS = [
     title: "Carriera",
     subtitle: "Esperienze e club",
     description: "I percorsi sportivi che mi hanno formato.",
-    image: "/IMG/img3.jpg",
+    image: "/IMG/allenatore-hero-2.webp",
     color: "bg-pink-800/80",
   },
   {
@@ -36,7 +36,7 @@ const QUADRANTS = [
     title: "Obiettivi",
     subtitle: "La mia visione",
     description: "Cosa cerco in un progetto calcistico.",
-    image: "/IMG/img4.jpg",
+    image: "/IMG/allenatore-hero.webp",
     color: "bg-red-800/80",
   },
   {
@@ -68,7 +68,7 @@ const QUADRANTS = [
     title: "Referenze",
     subtitle: "Parlano di me",
     description: "Valutazioni di chi ha lavorato con me.",
-    image: "/IMG/img8.jpg",
+    image: "/IMG/allenatore-tablet.webp",
     color: "bg-indigo-800/80",
   },
 ];
